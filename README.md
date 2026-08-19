@@ -1,6 +1,6 @@
 # 📊 Sales Performance Dashboard
 
-A multi-page **Business Intelligence dashboard developed in Power BI** to analyse sales performance, monitor key business indicators and identify trends across products, countries and time periods.
+Interactive **Business Intelligence dashboard developed in Power BI** to analyse sales performance, monitor key business indicators and identify trends across products, countries and time periods.
 
 ## 🎯 Project Objective
 
@@ -8,23 +8,23 @@ The objective of this project is to transform sales data into clear and actionab
 
 The dashboard allows users to:
 
-* Monitor overall sales performance and units sold.
-* Analyse monthly sales trends.
-* Compare product performance.
-* Evaluate sales performance across countries.
-* Identify the highest-performing country dynamically.
-* Explore detailed sales information using interactive filters and report navigation.
+- Monitor overall sales performance and units sold.
+- Analyse monthly sales trends.
+- Compare product performance.
+- Evaluate sales performance across countries.
+- Identify the highest-performing country dynamically.
+- Explore detailed sales information using interactive filters and report navigation.
 
 ## 🛠️ Tools & Technologies
 
-* **Power BI**
-* **Power Query**
-* **DAX**
-* **Microsoft Excel**
-* Data Cleaning
-* Data Visualization
-* KPI Analysis
-* Business Intelligence
+- **Power BI**
+- **Power Query**
+- **DAX**
+- **Microsoft Excel**
+- Data Cleaning
+- Data Visualization
+- KPI Analysis
+- Business Intelligence
 
 ## 📈 Dashboard Overview
 
@@ -34,9 +34,9 @@ The main dashboard provides an executive overview of sales performance through K
 
 ### Main KPIs
 
-* **Total Sales:** 118.73M
-* **Units Sold:** 1.13M
-* **Top Country:** dynamically calculated according to the current filter context.
+- **Total Sales:** 118.73M
+- **Units Sold:** 1.13M
+- **Top Country:** dynamically calculated according to the current filter context.
 
 ## 🧮 DAX Implementation
 
@@ -58,61 +58,67 @@ RETURN
     MAXX(CountryTable, 'financials'[Pais])
 ```
 
-This measure responds dynamically to the filter context of the report.
+The measure responds dynamically to the filter context of the report, allowing the top-performing country to update according to user selections.
 
 ## 🔎 Detailed Sales Analysis
 
-A second report page provides a more detailed view of sales data, including:
-
-* Sales by country and product.
-* Units sold by product and country.
-* Sales distribution across customer segments.
-* Country sales ranking.
-* Interactive filtering and report navigation.
+A second report page provides a more detailed view of sales performance.
 
 ![Detailed Sales Analysis](Imágenes/detailed-sales-analysis.png)
+
+This view enables analysis of:
+
+- Sales by country and product.
+- Units sold by product and country.
+- Sales distribution across business segments.
+- Country sales performance.
+- Detailed sales records.
+- Interactive filtering and report navigation.
 
 ## 💡 Key Insights
 
 The analysis highlights:
 
-* Differences in sales performance across countries.
-* Monthly variations in product demand.
-* Products and markets with stronger sales performance.
-* Seasonal changes in sales behaviour.
-* Opportunities to use interactive filtering for deeper business analysis.
+- Differences in sales performance across countries.
+- Monthly variations in product demand.
+- Products and markets with stronger sales performance.
+- Changes in sales behaviour throughout the analysed period.
+- The value of interactive filtering for deeper business analysis.
 
 ## ⚙️ Dashboard Features
 
-* Multi-page Power BI report
-* Interactive filters
-* Cross-page navigation
-* Dynamic KPI calculations
-* DAX measures
-* Product and country analysis
-* Monthly trend analysis
-* Business-oriented data visualization
+- Multi-page Power BI report
+- Interactive filters
+- Report navigation
+- Dynamic KPI calculations
+- Custom DAX measure
+- Product and country analysis
+- Monthly sales trend analysis
+- Business-oriented data visualization
 
 ## 📂 Repository Structure
 
 ```text
-Power-bi-Sales-Panel/
-│
-├── Dashboard/
-│   └── Sales-Performance-Dashboard.pbix
+power-bi-sales-dashboard/
 │
 ├── Imágenes/
 │   ├── dashboard-overview.png
 │   └── detailed-sales-analysis.png
 │
+├── sales-performance-dashboard.pbix
+│
 └── README.md
 ```
+
+The complete Power BI report is available in:
+
+**`sales-performance-dashboard.pbix`**
 
 ## 👩‍💻 Author
 
 **Luisa Fernanda Salazar García**
 
-Computer Engineer | Big Data & Visual Analytics
-Aspiring Data & Business Intelligence Analyst
+Computer Engineer  
+Master's Degree in Big Data & Visual Analytics — Expected September 2026
 
-**Core skills:** Power BI · Tableau · SQL · Excel · Data Visualization · Business Intelligence
+**Data & BI:** Power BI · Tableau · SQL · Excel · Data Visualization · Business Intelligence
