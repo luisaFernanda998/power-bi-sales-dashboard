@@ -1,29 +1,118 @@
-# Sales & Business Intelligence Dashboard
+# 📊 Sales Performance Dashboard
 
-Interactive Power BI dashboard for monitoring sales performance and supporting data-driven decisions.
+A multi-page **Business Intelligence dashboard developed in Power BI** to analyse sales performance, monitor key business indicators and identify trends across products, countries and time periods.
 
-## Business problem
-The goal was to identify sales trends, monitor KPIs and highlight products that required commercial attention.
+## 🎯 Project Objective
 
-## Tools
-- Power BI
-- Power Query
-- Excel
+The objective of this project is to transform sales data into clear and actionable business insights through an interactive Power BI report.
 
-## Dashboard preview
-> Add screenshots in the `images/` folder and update the links below.
+The dashboard allows users to:
 
-![Dashboard overview](images/dashboard-overview.png)
+* Monitor overall sales performance and units sold.
+* Analyse monthly sales trends.
+* Compare product performance.
+* Evaluate sales performance across countries.
+* Identify the highest-performing country dynamically.
+* Explore detailed sales information using interactive filters and report navigation.
 
-## Key insights
-- Monthly sales trend
-- Best-selling products
-- KPI monitoring
-- Business recommendations
+## 🛠️ Tools & Technologies
 
-## Repository structure
-```text
-dashboard/   # Power BI file
-data/        # anonymised sample data
-images/      # dashboard screenshots
+* **Power BI**
+* **Power Query**
+* **DAX**
+* **Microsoft Excel**
+* Data Cleaning
+* Data Visualization
+* KPI Analysis
+* Business Intelligence
+
+## 📈 Dashboard Overview
+
+The main dashboard provides an executive overview of sales performance through KPIs, interactive filters and visual analysis.
+
+![Sales Performance Dashboard](Imágenes/dashboard-overview.png)
+
+### Main KPIs
+
+* **Total Sales:** 118.73M
+* **Units Sold:** 1.13M
+* **Top Country:** dynamically calculated according to the current filter context.
+
+## 🧮 DAX Implementation
+
+A custom DAX measure was created to dynamically identify the country with the highest sales:
+
+```DAX
+Top Country =
+VAR CountryTable =
+    TOPN(
+        1,
+        SUMMARIZE(
+            'financials',
+            'financials'[Pais],
+            "TotalSales", SUM('financials'[Ventas])
+        ),
+        [TotalSales], DESC
+    )
+RETURN
+    MAXX(CountryTable, 'financials'[Pais])
 ```
+
+This measure responds dynamically to the filter context of the report.
+
+## 🔎 Detailed Sales Analysis
+
+A second report page provides a more detailed view of sales data, including:
+
+* Sales by country and product.
+* Units sold by product and country.
+* Sales distribution across customer segments.
+* Country sales ranking.
+* Interactive filtering and report navigation.
+
+![Detailed Sales Analysis](Imágenes/detailed-sales-analysis.png)
+
+## 💡 Key Insights
+
+The analysis highlights:
+
+* Differences in sales performance across countries.
+* Monthly variations in product demand.
+* Products and markets with stronger sales performance.
+* Seasonal changes in sales behaviour.
+* Opportunities to use interactive filtering for deeper business analysis.
+
+## ⚙️ Dashboard Features
+
+* Multi-page Power BI report
+* Interactive filters
+* Cross-page navigation
+* Dynamic KPI calculations
+* DAX measures
+* Product and country analysis
+* Monthly trend analysis
+* Business-oriented data visualization
+
+## 📂 Repository Structure
+
+```text
+Power-bi-Sales-Panel/
+│
+├── Dashboard/
+│   └── Sales-Performance-Dashboard.pbix
+│
+├── Imágenes/
+│   ├── dashboard-overview.png
+│   └── detailed-sales-analysis.png
+│
+└── README.md
+```
+
+## 👩‍💻 Author
+
+**Luisa Fernanda Salazar García**
+
+Computer Engineer | Big Data & Visual Analytics
+Aspiring Data & Business Intelligence Analyst
+
+**Core skills:** Power BI · Tableau · SQL · Excel · Data Visualization · Business Intelligence
